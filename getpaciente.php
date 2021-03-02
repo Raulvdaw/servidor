@@ -5,7 +5,7 @@
     <?php
     require_once 'conexion.php';
 
-// probando otra vez regrggg
+// probando otra vez regrgggftgh
     $id = intval($_GET['id']);
 
     $con = mysqli_connect($db['host'], $db['username'], $db['password'], $db['db']);
