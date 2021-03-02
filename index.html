@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function mostrarInfoPaciente(id) {
+            if (id == "") {
+                document.getElementById("informacion").innerHTML = "";
+                return;
+            } else {
+
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("informacion").innerHTML = this.responseText;
+                    }
+                };
+
+                xmlhttp.open("GET", "getpaciente.php?id=" + id, true);
+                  xmlhttp.send();
+
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <form>
+        <select name="pacientes" onchange="mostrarInfoPaciente(this.value)">
+            <option value="">Selecciona un paciente:</option>
+            <option value="1">Raul</option>
+            <option value="2">Pepe</option>
+           
+        </select>
+    </form>
+
+    <br>
+
+    <div id="informacion"><b>La informacion del paciente sere mostrada aqui...</b></div>
+
+
+</body>
+
+</html>
