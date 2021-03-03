@@ -1,5 +1,5 @@
 <?php
-//porando github hola
+//porando github hola zdfgdytjdy
 $db = [
 
    'host' => 'localhost',
